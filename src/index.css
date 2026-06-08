@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Sage Clinical palette.
+  Sage green accent against warm neutral surfaces — clinical precision
+  with a natural, human warmth.
+
+  Light → Sage Mist   (sage sidebar, warm white panels, soft sage borders)
+  Dark  → Deep Forest (forest-dark bg, rich forest panels, sage-cream text)
+*/
+
+/* ── Dark — Deep Forest ─────────────────────────────────────────────────────── */
+:root {
+  --c-bg:       20  28  24;   /* #141C18  page bg / sidebar — deep forest        */
+  --c-panel:    26  36  32;   /* #1A2420  topbar / nav panels                   */
+  --c-surface:  34  48  40;   /* #223028  inputs / secondary surfaces            */
+  --c-border:   46  64  56;   /* #2E4038  borders                                */
+  --c-deep:     14  22  18;   /* #0E1612  footer / deepest layer                 */
+  --c-content:  24  32  24;   /* #182018  authenticated content area             */
+  --c-card:     30  44  36;   /* #1E2C24  cards inside content                  */
+  --c-text:    232 237 230;   /* #E8EDE6  primary text — sage cream              */
+  --c-muted:   122 158 136;   /* #7A9E88  muted — sage                          */
+  --c-faint:    74 104  88;   /* #4A6858  faint / placeholder                   */
+
+  --body-bg:   #141C18;
+  --body-text: #E8EDE6;
+}
+
+/* ── Light — Sage Mist ──────────────────────────────────────────────────────── */
+html.light {
+  --c-bg:      232 237 230;   /* #E8EDE6  sidebar / page bg — sage mist         */
+  --c-panel:   244 241 236;   /* #F4F1EC  topbar / panels — warm white           */
+  --c-surface: 234 230 223;   /* #EAE6DF  inputs — warm off-white               */
+  --c-border:  208 206 200;   /* #D0CEC8  borders — warm gray                   */
+  --c-deep:    221 217 210;   /* #DDD9D2  footer — warm gray deep               */
+  --c-content: 248 246 242;   /* #F8F6F2  content area — near-white warm        */
+  --c-card:    255 255 255;   /* #FFFFFF  cards — white                          */
+  --c-text:     28  32  24;   /* #1C2018  primary text — deep forest             */
+  --c-muted:   107 122 104;   /* #6B7A68  muted — sage gray                     */
+  --c-faint:   168 180 164;   /* #A8B4A4  faint / placeholder — sage             */
+
+  --body-bg:   #E8EDE6;
+  --body-text: #1C2018;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--body-bg);
+  color: var(--body-text);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--body-bg); }
+::-webkit-scrollbar-thumb { background: rgb(var(--c-border)); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--c-faint)); }
