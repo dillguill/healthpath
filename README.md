@@ -1,16 +1,35 @@
-# React + Vite
+# HealthPath
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A patient-facing healthcare platform for managing chronic conditions — featuring personalized meal planning, a provider network directory, and a health resource library. Built as a responsive SPA with light and dark modes.
 
-Currently, two official plugins are available:
+**Live:** [dillguill.github.io/healthpath](https://dillguill.github.io/healthpath/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Meal Planner** — Quick mode generates a 7-day plan from a single health goal. Advanced mode filters by condition (CKD, hypertension, diabetes, heart disease), dietary preference, nutrients to limit, and allergens. 88+ meals across all categories.
+- **Dashboard** — Activity feed, health stats, quick actions, and personalized tips.
+- **Auth** — Sign up, log in, and log out with role selection (patient, provider, caregiver). Session persists across page refreshes.
+- **Light / Dark mode** — Sage Clinical theme: sage sidebar, warm white panels. Persisted to localStorage with flash prevention.
+- **Responsive** — Mobile drawer (slides from right), desktop fixed sidebar, adaptive topbar.
 
-## Expanding the ESLint configuration
+## Tech
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 18 + Vite
+- Tailwind CSS v3 with CSS custom property theming
+- React Router v6 (`basename` for GitHub Pages subpath)
+- localStorage auth (demo — no backend)
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+App runs at `http://localhost:5173/healthpath/`.
+
+## Deployment
+
+Pushes to `main` trigger a GitHub Actions workflow that builds and deploys to the `gh-pages` branch. Served via GitHub Pages at the live link above.
